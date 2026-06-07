@@ -241,16 +241,13 @@
     .work-title { font-size: 18px; }
     #contact { padding: 60px 20px 80px; }
     footer { padding: 16px 20px; flex-direction: column; gap: 4px; }
-    .works-intro { padding: 120px 20px 32px; flex-direction: column; gap: 16px; }
-    .works-intro-right { text-align: left; }
+    .works-intro { padding: 120px 20px 32px; }
+    .works-label-bar { margin: 0 20px; padding: 20px 0 12px; }
     .proj-top { grid-template-columns: 1fr !important; }
   }
 
   /* ── WORKS HEADER INTRO ── */
   .works-intro {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
     padding: 140px 32px 48px;
   }
   .works-intro-left {
@@ -269,13 +266,16 @@
     text-underline-offset: 2px;
   }
   .works-intro-left a:hover { color: var(--black); }
-  .works-intro-right {
-    text-align: right;
-    font-size: 28px;
-    line-height: 1.4;
+
+  .works-label-bar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: baseline;
+    padding: 0 32px 32px;
+    margin: 0 32px;
   }
-  .works-intro-right .label { color: var(--black); font-weight: 500; }
-  .works-intro-right .years { color: var(--gray); }
+  .works-label-bar .label { color: var(--black); font-weight: 500; font-size: 28px; line-height: 1.4; }
+  .works-label-bar .years { color: var(--gray); font-size: 28px; line-height: 1.4; margin-left: 8px; }
 
   /* ── STILE PER I PLACEHOLDER DELLE IMMAGINI CON EFFETTI ORIGINALI ── */
   .work-card-img,
@@ -334,7 +334,11 @@
   <div class="works-intro-left">
     <strong>Beatrice Buratti</strong> is a multidisciplinary designer at <a href="https://www.instagram.com/giacimenti.urbani/" target="_blank">Giacimenti Urbani</a>. Currently based in Milan.
   </div>
-  <div class="works-intro-right">
+</div>
+
+<!-- Selected Works label bar -->
+<div class="works-label-bar">
+  <div style="text-align:right;">
     <div class="label">Selected Works</div>
     <div class="years">2022 – 2026</div>
   </div>
