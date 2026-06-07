@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PR & Digital Communication — Beatrice Buratti</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --black: #0d0d0d;
+    --white: #ffffff;
+    --gray: #999999;
+    --line: #e0e0e0;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--white);
+    color: var(--black);
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 20px 32px;
+    background: var(--white);
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s;
+  }
+  nav.scrolled { border-bottom-color: var(--line); }
+  .nav-logo {
+    font-size: 13px; font-weight: 700;
+    letter-spacing: -0.01em;
+    color: var(--black); text-decoration: none;
+  }
+  .nav-links { display: flex; gap: 32px; list-style: none; }
+  .nav-links a {
+    font-size: 13px; color: var(--black);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--gray); }
+
+  /* ── FOOTER ── */
+  footer {
+    padding: 20px 32px;
+    display: flex; justify-content: space-between;
+    font-size: 11px; color: var(--gray);
+    letter-spacing: 0.02em;
+  }
+
+  /* ── PROJECT STYLES ── */
+  .project-hero {
+    padding: 140px 32px 64px;
+  }
+  .project-title {
+    font-size: clamp(36px, 6vw, 72px);
+    font-weight: 400; letter-spacing: -0.02em;
+    line-height: 1.05; color: var(--black);
+    margin-bottom: 24px;
+  }
+  .project-meta {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 32px;
+    padding: 20px 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 0;
+  }
+  .meta-label {
+    font-size: 10px; color: var(--gray);
+    text-transform: uppercase; letter-spacing: 0.15em;
+    margin-bottom: 8px;
+  }
+  .meta-value { font-size: 13px; color: var(--black); line-height: 1.6; }
+
+  .video-container {
+    width: 100%;
+    aspect-ratio: 16/9;
+    background: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .video-placeholder span {
+    font-size: 12px;
+    color: var(--gray);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .project-section {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 0;
+    padding: 64px 32px;
+    align-items: start;
+  }
+  .project-section-label {
+    font-size: 12px; color: var(--gray);
+    padding-top: 4px;
+  }
+  .project-section-text {
+    font-size: 15px; line-height: 1.8; color: var(--black);
+  }
+  .project-section-text p + p { margin-top: 20px; }
+
+  .project-images {
+    padding: 0 32px 64px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .project-img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    background: #f0f0f0;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .project-placeholder span {
+    font-size: 11px;
+    color: var(--gray);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  @media (max-width: 680px) {
+    .project-hero { padding: 120px 20px 40px; }
+    .project-meta { grid-template-columns: 1fr 1fr; }
+    .project-section { grid-template-columns: 1fr; padding: 40px 20px; gap: 16px; }
+    .project-images { padding: 0 20px 40px; grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <span class="nav-logo" style="cursor: default;">beatrice buratti</span>
+  <ul class="nav-links">
+    <li><a href="index.html">Selected Works</a></li>
+    <li><a href="about.html">About Me</a></li>
+  </ul>
+</nav>
+
+<!-- Hero GIF -->
+<div class="video-container video-placeholder">
+  <span>Hero Image Placeholder</span>
+</div>
+
+<!-- Hero -->
+<div class="project-hero">
+  <h1 class="project-title">PR & Digital Communication</h1>
+  <div class="project-meta">
+    <div class="meta-block">
+      <div class="meta-label">Category</div>
+      <div class="meta-value">Graphic<br>Digital Communication</div>
+    </div>
+    <div class="meta-block">
+      <div class="meta-label">Year</div>
+      <div class="meta-value">2026<br>Ongoing</div>
+    </div>
+    <div class="meta-block">
+      <div class="meta-label">Role</div>
+      <div class="meta-value">Communications &<br>Events Assistant</div>
+    </div>
+    <div class="meta-block" style="grid-column: span 2;">
+      <div class="meta-label">Context</div>
+      <div class="meta-value">Work experience — Giacimenti Urbani, Milan, Italy<br>May 2026 – Present</div>
+    </div>
+  </div>
+</div>
+
+<!-- Description -->
+<div class="project-section" style="padding-top:24px;">
+  <div class="project-section-label">About the project</div>
+  <div class="project-section-text">
+    <p>Working with the non-profit organization Giacimenti Urbani, I am actively contributing to its digital transformation. My role focuses on designing and executing comprehensive digital communication strategies to promote environmental sustainability and social events.</p>
+    <p>I independently manage the association's presence on Facebook and Instagram, curating the visual identity through custom graphics, photographic coverage, and copywriting. Additionally, I manage website updates via WordPress and support public relations and on-site event coordination.</p>
+  </div>
+</div>
+
+<!-- Activities -->
+<div class="project-section" style="padding-top:0;">
+  <div class="project-section-label">Activities & skills</div>
+  <div class="project-section-text">
+    <p>My main activities focus on managing the association's digital presence across Facebook and Instagram, defining comprehensive communication strategies, and producing content and copy to support the non-profit organization's digital transformation.</p>
+    <p>I am also responsible for curating and updating the official WordPress website by publishing articles, news, and event updates, while actively assisting in public relations and on-site event coordination. These tasks are strengthening my skills in digital communication, with a strong focus on promoting environmental sustainability and resource waste reduction.</p>
+  </div>
+</div>
+
+<!-- Images -->
+<div class="project-images">
+  <div class="project-img project-placeholder">
+    <span>Project View 01</span>
+  </div>
+  <div class="project-img project-placeholder">
+    <span>Project View 02</span>
+  </div>
+  <div class="project-img project-placeholder">
+    <span>Project View 03</span>
+  </div>
+  <div class="project-img project-placeholder">
+    <span>Project View 04</span>
+  </div>
+  <div class="project-img project-placeholder">
+    <span>Project View 05</span>
+  </div>
+  <div class="project-img project-placeholder">
+    <span>Project View 06</span>
+  </div>
+</div>
+
+<!-- Links -->
+<div style="padding: 0 32px 64px;">
+  <div style="font-size:22px;color:#0d0d0d;margin-bottom:12px;">Curious about more? Check <a href="https://www.instagram.com/giacimenti.urbani/" target="_blank" style="color:#0d0d0d;text-decoration:underline;text-underline-offset:3px;transition:color 0.2s;" onmouseover="this.style.color='#999'" onmouseout="this.style.color='#0d0d0d'">Giacimenti Urbani's Instagram page</a></div>
+</div>
+
+<!-- Back to Selected Works -->
+<div style="padding: 0 32px 64px;">
+  <a href="index.html" style="display:inline-flex;align-items:center;gap:8px;font-size:22px;color:#0d0d0d;text-decoration:none;transition:color 0.3s ease;" onmouseover="this.style.color='#999';" onmouseout="this.style.color='#0d0d0d';">
+    <svg width="18" height="18" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 6H2M2 6L6 2M2 6L6 10" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    Back to Selected Works
+  </a>
+</div>
+
+<!-- Footer -->
+<footer>
+  <div>© 2026 Beatrice Buratti</div>
+  <div>Design Portfolio</div>
+</footer>
+
+<script>
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 20);
+  });
+</script>
+
+</body>
+</html>
