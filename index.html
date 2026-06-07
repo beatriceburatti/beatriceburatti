@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -289,6 +289,14 @@
     justify-content: center;
   }
   
+  .proj-img img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+  }
+  .proj-wrap:hover .proj-img img { transform: scale(1.05); }
+
   .work-card-img span,
   .proj-img span {
     font-size: 11px;
@@ -354,7 +362,7 @@
   <!-- Progetto 1 -->
   <div class="proj-wrap" style="cursor:pointer;" onclick="window.location.href='pr-digital.html'">
     <div class="proj-img" style="aspect-ratio:4/3;">
-      <span>Project 01 — Preview Placeholder</span>
+      <img src="pr-digital-cover.png" style="width:100%;height:100%;object-fit:cover;display:block;">
     </div>
     <div class="proj-info">
       <div class="proj-title">PR & Digital Communication →</div>
@@ -365,7 +373,7 @@
   <!-- Progetto 2 -->
   <div class="proj-wrap">
     <div class="proj-img" style="aspect-ratio:4/3;">
-      <span>Project 02 — Preview Placeholder</span>
+      <img src="working-cover.png" style="width:100%;height:100%;object-fit:cover;display:block;">
     </div>
     <div class="proj-info">
       <div class="proj-title">Working in a Design Studio →</div>
@@ -387,7 +395,7 @@
   <!-- Progetto 4 -->
   <div class="proj-wrap" style="cursor:pointer;" onclick="window.location.href='courage.html'">
     <div class="proj-img" style="aspect-ratio:4/3;">
-      <span>Project 04 — Preview Placeholder</span>
+      <img src="courage-cover.png" style="width:100%;height:100%;object-fit:cover;display:block;">
     </div>
     <div class="proj-info">
       <div class="proj-title">Courage is Trespass →</div>
@@ -398,7 +406,7 @@
   <!-- Progetto 5 -->
   <div class="proj-wrap" style="cursor:pointer;" onclick="window.location.href='sound-of-sea.html'">
     <div class="proj-img" style="aspect-ratio:4/3;">
-      <span>Project 05 — Preview Placeholder</span>
+      <img src="sound-of-sea-cover.png" style="width:100%;height:100%;object-fit:cover;display:block;">
     </div>
     <div class="proj-info">
       <div class="proj-title">Sound of Sea →</div>
@@ -409,7 +417,7 @@
   <!-- Progetto 6 -->
   <div class="proj-wrap">
     <div class="proj-img" style="aspect-ratio:4/3;">
-      <span>Project 06 — Preview Placeholder</span>
+      <img src="window-cover.png" style="width:100%;height:100%;object-fit:cover;display:block;">
     </div>
     <div class="proj-info">
       <div class="proj-title">A Look Through the Window →</div>
