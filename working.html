@@ -232,6 +232,13 @@
 </footer>
 
 <script>
+  const heroVideo = document.querySelector(".video-container video");
+  if (heroVideo) {
+    heroVideo.style.cursor = "pointer";
+    heroVideo.addEventListener("click", () => {
+      if (heroVideo.paused) { heroVideo.play(); } else { heroVideo.pause(); }
+    });
+  }
   const nav = document.getElementById('nav');
   window.addEventListener('scroll', () => {
     nav.classList.toggle('scrolled', window.scrollY > 20);
