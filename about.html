@@ -141,9 +141,37 @@
     border-bottom: 1px solid var(--line);
   }
 
-  /* Experience */
-  .exp-item { margin-bottom: 24px; }
+  /* ── ACCORDION ── */
+  .exp-item { margin-bottom: 24px; cursor: pointer; }
   .exp-item:last-child { margin-bottom: 0; }
+  .exp-header { display: flex; justify-content: space-between; align-items: flex-start; }
+  .exp-arrow {
+    font-size: 11px; color: var(--gray);
+    transition: transform 0.3s;
+    margin-top: 2px; flex-shrink: 0;
+  }
+  .exp-item.open .exp-arrow { transform: rotate(180deg); }
+  .exp-details {
+    max-height: 0; overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.3s ease;
+  }
+  .exp-item.open .exp-details { max-height: 300px; }
+  .exp-details ul {
+    list-style: none;
+    padding-top: 12px;
+  }
+  .exp-details ul li {
+    font-size: 13px; color: var(--gray);
+    line-height: 1.6;
+    padding-left: 16px;
+    position: relative;
+    margin-bottom: 8px;
+  }
+  .exp-details ul li::before {
+    content: '—';
+    position: absolute; left: 0;
+    color: var(--line);
+  }
   .exp-company {
     font-size: 14px; font-weight: 400; color: var(--black);
   }
@@ -317,25 +345,71 @@
   <div class="info-empty"></div>
   <div class="info-label">Experience:</div>
   <div class="info-content">
-    <div class="exp-item">
-      <div class="exp-company">Giacimenti Urbani, <span class="location">Milan, Italy</span></div>
-      <div class="exp-role">Communications and Events Assistant</div>
-      <div class="exp-year">May 2026 – Present</div>
+    <div class="exp-item" onclick="toggleExp(this)">
+      <div class="exp-header">
+        <div>
+          <div class="exp-company">Giacimenti Urbani, <span class="location">Milan, Italy</span></div>
+          <div class="exp-role">Communications and Events Assistant</div>
+          <div class="exp-year">May 2026 – Present</div>
+        </div>
+        <span class="exp-arrow">▾</span>
+      </div>
+      <div class="exp-details">
+        <ul>
+          <li>Manage the association's digital presence across Facebook and Instagram, from content creation, to copywriting, and comprehensive digital communication strategies, actively contributing to the digital transformation of the non-profit organization.</li>
+          <li>Curate and update the official website (in WordPress) by publishing event articles and news.</li>
+          <li>Assist in public relations and event coordination, with a strong focus on promoting environmental sustainability and resource waste reduction.</li>
+        </ul>
+      </div>
     </div>
-    <div class="exp-item">
-      <div class="exp-company">Stefano Boeri Interiors, <span class="location">Milan, Italy</span></div>
-      <div class="exp-role">Communication Design Intern</div>
-      <div class="exp-year">Oct 2025 – Dec 2025</div>
+    <div class="exp-item" onclick="toggleExp(this)">
+      <div class="exp-header">
+        <div>
+          <div class="exp-company">Stefano Boeri Interiors, <span class="location">Milan, Italy</span></div>
+          <div class="exp-role">Communication Design Intern</div>
+          <div class="exp-year">Oct 2025 – Dec 2025</div>
+        </div>
+        <span class="exp-arrow">▾</span>
+      </div>
+      <div class="exp-details">
+        <ul>
+          <li>Managed the production of digital content for the studio's Instagram account, designing a 4-month editorial plan to promote both new and archive architectural projects.</li>
+          <li>Designed static graphics, reels, and GIFs (using Adobe InDesign, Illustrator, Photoshop, Premiere Pro), successfully translating complex design concepts into an accessible and effective visual narrative.</li>
+          <li>Curated and updated the studio's professional portfolio and official website by selecting representative visuals and editing the accompanying copy, ensuring a cohesive narrative.</li>
+          <li>Operated with a high level of autonomy to support the Communication Manager, proactively interfacing with multidisciplinary studio teams to coordinate deliverables, ensure cohesive communication strategies, and meet strategic goals.</li>
+        </ul>
+      </div>
     </div>
-    <div class="exp-item">
-      <div class="exp-company">Barbara De Ponti, <span class="location">Milan, Italy</span></div>
-      <div class="exp-role">Creative Assistant</div>
-      <div class="exp-year">Mar 2023 – Jun 2023</div>
+    <div class="exp-item" onclick="toggleExp(this)">
+      <div class="exp-header">
+        <div>
+          <div class="exp-company">Barbara De Ponti, <span class="location">Milan, Italy</span></div>
+          <div class="exp-role">Creative Assistant</div>
+          <div class="exp-year">Mar 2023 – Jun 2023</div>
+        </div>
+        <span class="exp-arrow">▾</span>
+      </div>
+      <div class="exp-details">
+        <ul>
+          <li>Co-designed a site-specific installation Clay Time Code at Volvo Studio Milano (May–September 2023), curating the spatial layout, producing original pop-style wall graphics (Illustrator and Photoshop), and co-writing artwork and concept texts for the exhibition.</li>
+        </ul>
+      </div>
     </div>
-    <div class="exp-item">
-      <div class="exp-company">Student Association, <span class="location">Rome, Italy</span></div>
-      <div class="exp-role">Social Media Manager & Event Coordinator</div>
-      <div class="exp-year">Jan 2018 – Jun 2020</div>
+    <div class="exp-item" onclick="toggleExp(this)">
+      <div class="exp-header">
+        <div>
+          <div class="exp-company">Student Association, <span class="location">Rome, Italy</span></div>
+          <div class="exp-role">Social Media Manager & Event Coordinator</div>
+          <div class="exp-year">Jan 2018 – Jun 2020</div>
+        </div>
+        <span class="exp-arrow">▾</span>
+      </div>
+      <div class="exp-details">
+        <ul>
+          <li>Managed the association (XMigliorare Righi) Instagram presence, producing over 100 posts, including static graphics, video reels, and photographic recaps of cultural and social events, to increase student engagement and define a consistent visual identity.</li>
+          <li>Led the end-to-end planning and execution of cultural and social events as an elected Student Representative, managing logistics and team coordination.</li>
+        </ul>
+      </div>
     </div>
   </div>
 </div>
@@ -423,6 +497,10 @@
   window.addEventListener('scroll', () => {
     nav.classList.toggle('scrolled', window.scrollY > 20);
   });
+
+  function toggleExp(el) {
+    el.classList.toggle('open');
+  }
 </script>
 
 </body>
